@@ -2,21 +2,21 @@ import { DashboardMetric } from '../types';
 import { api, ApiError } from '../utils/api';
 import { useEffect, useState } from 'react';
 
-export function useGetMetrics() {
-  const [metrics, setMetrics] = useState<DashboardMetric[]>([]);
+export function useGetAnalytics() {
+  const [analytics, setAnalytics] = useState<DashboardMetric[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const controller = new AbortController();
 
-    async function fetchMetrics() {
+    async function fetchAnalytics() {
       try {
         setIsLoading(true);
         setError(null);
 
-        const data = await api.get<DashboardMetric[]>("/metrics");
-        setMetrics(data);
+        const data = await api.get<DashboardMetric[]>("/analytics");
+        setAnalytics(data);
       } catch (err) {
         if (err instanceof ApiError) {
           setError(`Error ${err.status}: ${err.message}`);
@@ -30,11 +30,16 @@ export function useGetMetrics() {
       }
     }
 
-    fetchMetrics();
+    fetchAnalytics();
 
     // Cleanup cancels the request if the component unmounts
     return () => controller.abort();
   }, []);
 
-  return { metrics, isLoading, error, refetch: () => window.location.reload() };
+  return {
+    analytics,
+    isLoading,
+    error,
+    refetch: () => window.location.reload(),
+  };
 }
