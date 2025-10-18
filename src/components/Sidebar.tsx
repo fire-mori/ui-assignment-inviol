@@ -1,11 +1,11 @@
-import { NavLink } from 'react-router-dom'
-import { BarChart3, Home, Users as UsersIcon } from 'lucide-react'
+import { NavLink } from "react-router-dom";
+import { BarChart3, Home, Users as UsersIcon } from "lucide-react";
 
 const navigation = [
-  { name: 'Dashboard', href: '/', icon: Home },
-  { name: 'Analytics', href: '/analytics', icon: BarChart3 },
-  { name: 'Users', href: '/users', icon: UsersIcon },
-]
+  { name: "Dashboard", href: "/", icon: Home },
+  { name: "Analytics", href: "/analytics", icon: BarChart3 },
+  { name: "Users", href: "/users", icon: UsersIcon },
+];
 
 export default function Sidebar() {
   return (
@@ -22,8 +22,8 @@ export default function Sidebar() {
               className={({ isActive }) =>
                 `group flex items-center px-3 py-2 text-sm font-medium rounded-md mb-1 transition-colors ${
                   isActive
-                    ? 'bg-primary-50 text-primary-700 border-r-2 border-primary-500'
-                    : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
+                    ? "bg-primary-50 text-primary-700 border-r-2 border-primary-500"
+                    : "text-gray-700 hover:bg-gray-50 hover:text-gray-900"
                 }`
               }
             >
@@ -37,5 +37,5 @@ export default function Sidebar() {
         </div>
       </nav>
     </div>
-  )
+  );
 }

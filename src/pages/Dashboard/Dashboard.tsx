@@ -1,5 +1,5 @@
-import Metrics from "./Metrics/Metrics";
 import Charts from "./Charts/Charts";
+import Metrics from "./Metrics/Metrics";
 
 export default function Dashboard() {
   return (

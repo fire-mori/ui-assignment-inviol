@@ -10,9 +10,10 @@ export default function Users() {
 
       <div className="bg-white rounded-lg shadow p-6">
         <p className="text-gray-500">
-          Users page placeholder. Implement your user table, search, and filters here based on the design mockups.
+          Users page placeholder. Implement your user table, search, and filters
+          here based on the design mockups.
         </p>
       </div>
     </div>
-  )
+  );
 }

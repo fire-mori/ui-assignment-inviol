@@ -5,6 +5,7 @@ Welcome to your React UI assignment! This is a practical coding challenge design
 ## 🎯 Assignment Overview
 
 You'll be building a **Dashboard Application** with three main sections:
+
 1. **Dashboard** - Overview with metrics cards and charts
 2. **Analytics** - Data visualization and insights
 3. **Users** - User management with search and filtering
@@ -14,21 +15,25 @@ You'll be building a **Dashboard Application** with three main sections:
 ## 🚀 Getting Started
 
 1. **Install dependencies:**
+
    ```bash
    npm install
    ```
 
 2. **Start the development server:**
+
    ```bash
    npm run dev
    ```
 
 3. **Start the mock API (in a new terminal):**
+
    ```bash
    npm run api
    ```
 
 4. **Run linting:**
+
    ```bash
    npm run lint
    ```
@@ -45,18 +50,21 @@ The app will be available at `http://localhost:3000` and the API at `http://loca
 ### Core Features (Must Have)
 
 #### 1. Dashboard Page (`/`)
+
 - [ ] **Metrics Cards**: Display 4 key metrics (total users, active sessions, revenue, conversion rate)
 - [ ] **Chart Component**: Line/bar chart showing analytics data over time
 - [ ] **Recent Activity**: List of recent user activities or system events
 - [ ] **Responsive Design**: Must work on mobile, tablet, and desktop
 
 #### 2. Analytics Page (`/analytics`)
+
 - [ ] **Multiple Charts**: At least 2 different chart types (line, bar, pie, etc.)
 - [ ] **Date Range Picker**: Filter data by date range
 - [ ] **Export Functionality**: Button to export chart data as CSV/JSON
 - [ ] **Interactive Charts**: Hover states, tooltips, or click interactions
 
 #### 3. Users Page (`/users`)
+
 - [ ] **User Table**: Display users with avatar, name, email, role, status
 - [ ] **Search Functionality**: Real-time search by name or email
 - [ ] **Filtering**: Filter by role (admin, user, moderator) and status
@@ -67,6 +75,7 @@ The app will be available at `http://localhost:3000` and the API at `http://loca
 ### Technical Requirements
 
 #### Code Quality
+
 - [ ] **TypeScript**: Proper typing throughout the application
 - [ ] **Component Architecture**: Reusable, well-structured components
 - [ ] **Custom Hooks**: Extract business logic into custom hooks
@@ -74,18 +83,21 @@ The app will be available at `http://localhost:3000` and the API at `http://loca
 - [ ] **Loading States**: Loading indicators for async operations
 
 #### Performance
+
 - [ ] **React.memo()**: Optimize re-renders where appropriate
 - [ ] **useMemo/useCallback**: Prevent unnecessary calculations/recreations
 - [ ] **Lazy Loading**: Implement code splitting for routes
 - [ ] **Debounced Search**: Debounce search input to reduce API calls
 
 #### Accessibility
+
 - [ ] **Keyboard Navigation**: All interactive elements accessible via keyboard
 - [ ] **ARIA Labels**: Proper ARIA attributes for screen readers
 - [ ] **Focus Management**: Visible focus indicators
 - [ ] **Color Contrast**: Meet WCAG AA standards
 
 #### Testing
+
 - [ ] **Unit Tests**: Test critical components and hooks
 - [ ] **Integration Tests**: Test component interactions
 - [ ] **Mock API Calls**: Properly mock HTTP requests
@@ -103,11 +115,13 @@ The app will be available at `http://localhost:3000` and the API at `http://loca
 ## 🎨 Design Specifications
 
 ### Design Assets
+
 - Check the `/designs` folder for high-fidelity mockups
 - Use the provided design tokens in `tailwind.config.js`
 - Follow the component hierarchy shown in the mockups
 
 ### Design System
+
 - **Colors**: Primary blue (#3b82f6), neutral grays
 - **Typography**: Inter font family
 - **Spacing**: 4px base unit (Tailwind's spacing scale)
@@ -115,6 +129,7 @@ The app will be available at `http://localhost:3000` and the API at `http://loca
 - **Shadows**: Subtle shadows for elevation
 
 ### Responsive Breakpoints
+
 - **Mobile**: 320px - 768px
 - **Tablet**: 768px - 1024px
 - **Desktop**: 1024px+
@@ -122,22 +137,27 @@ The app will be available at `http://localhost:3000` and the API at `http://loca
 ## 🔧 Technical Stack
 
 **Core:**
+
 - React 18 with TypeScript
 - Vite for build tooling
 - React Router for navigation
 - Tailwind CSS for styling
 
 **State Management:**
+
 - Zustand (included) or React Context
 - You may add Redux Toolkit if preferred
 
 **HTTP Client:**
+
 - Fetch API or add Axios if needed
 
 **Icons:**
+
 - Lucide React (already included)
 
 **Testing:**
+
 - Vitest + Testing Library
 
 ## 📁 Project Structure
@@ -170,6 +190,7 @@ The mock API provides the following endpoints:
 ## ✅ Evaluation Criteria
 
 ### Code Quality (40%)
+
 - Clean, readable, and maintainable code
 - Proper TypeScript usage
 - Component composition and reusability
@@ -177,6 +198,7 @@ The mock API provides the following endpoints:
 - Error handling and edge cases
 
 ### UI/UX Implementation (30%)
+
 - Pixel-perfect implementation of designs
 - Responsive behavior across devices
 - Smooth interactions and animations
@@ -184,6 +206,7 @@ The mock API provides the following endpoints:
 - Performance optimization
 
 ### Architecture & Best Practices (20%)
+
 - Proper project structure
 - State management approach
 - API integration patterns
@@ -191,6 +214,7 @@ The mock API provides the following endpoints:
 - Git commit quality
 
 ### Problem Solving (10%)
+
 - Handling edge cases
 - Creative solutions to complex problems
 - Code comments explaining decisions
@@ -214,6 +238,7 @@ The mock API provides the following endpoints:
 ## 🤔 Questions?
 
 If you have questions about requirements or need clarification:
+
 - Check the design mockups first
 - Review the provided API structure
 - Make reasonable assumptions and document them

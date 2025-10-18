@@ -1,6 +1,6 @@
-import { DashboardMetric } from '../types';
-import { api, ApiError } from '../utils/api';
-import { useEffect, useState } from 'react';
+import { DashboardMetric } from "../types";
+import { api, ApiError } from "../utils/api";
+import { useEffect, useState } from "react";
 
 export function useGetAnalytics() {
   const [analytics, setAnalytics] = useState<DashboardMetric[]>([]);

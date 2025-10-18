@@ -1,8 +1,8 @@
-import { Routes, Route } from 'react-router-dom'
-import Layout from './components/Layout'
-import Dashboard from './pages/Dashboard/Dashboard'
-import Analytics from './pages/Analytics/Analytics'
-import Users from './pages/Users/Users'
+import { Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Analytics from "./pages/Analytics/Analytics";
+import Users from "./pages/Users/Users";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Route path="/users" element={<Users />} />
       </Routes>
     </Layout>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,4 +1,4 @@
-import { Bell, Search, User } from 'lucide-react'
+import { Bell, Search, User } from "lucide-react";
 
 export default function Header() {
   return (
@@ -45,5 +45,5 @@ export default function Header() {
         </div>
       </div>
     </header>
-  )
+  );
 }

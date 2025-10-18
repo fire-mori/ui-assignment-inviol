@@ -1,6 +1,6 @@
-import LoadingIcon from '../../../components/ui/Loading';
-import Card from '../../../components/ui/Card';
-import { useGetMetrics } from '../../../hooks/useGetMetrics';
+import LoadingIcon from "../../../components/ui/Loading";
+import Card from "../../../components/ui/Card";
+import { useGetMetrics } from "../../../hooks/useGetMetrics";
 
 export default function Metrics() {
   const { metrics, error, isLoading } = useGetMetrics();
@@ -18,8 +18,8 @@ export default function Metrics() {
             </h2>
             <p className="mt-4 text-gray-600">{metric.value}</p>
           </Card>
-        ))}      
-      </div>  
-   </div>
+        ))}
+      </div>
+    </div>
   );
 }

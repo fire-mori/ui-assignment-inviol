@@ -10,9 +10,10 @@ export default function Analytics() {
 
       <div className="bg-white rounded-lg shadow p-6">
         <p className="text-gray-500">
-          Analytics page placeholder. Implement your charts and metrics here based on the design mockups.
+          Analytics page placeholder. Implement your charts and metrics here
+          based on the design mockups.
         </p>
       </div>
     </div>
-  )
+  );
 }
