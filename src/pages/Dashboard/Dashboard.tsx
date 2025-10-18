@@ -1,5 +1,6 @@
 import Metrics from './Metrics/Metrics';
 import AnalyticsLineChart from './Charts/AnalyticsLineChart'
+import AnalyticsBarChart from './Charts/AnalyticsBarChart';
 
 export default function Dashboard() {
   return (
@@ -11,6 +12,7 @@ export default function Dashboard() {
       <div className="grid grid-cols-1 gap-6">
         <Metrics />
         <AnalyticsLineChart />
+        <AnalyticsBarChart />
       </div>
     </div>
   );
