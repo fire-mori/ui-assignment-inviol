@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
-import Dashboard from './pages/Dashboard'
-import Analytics from './pages/Analytics'
-import Users from './pages/Users'
+import Dashboard from './pages/Dashboard/Dashboard'
+import Analytics from './pages/Analytics/Analytics'
+import Users from './pages/Users/Users'
 
 function App() {
   return (
