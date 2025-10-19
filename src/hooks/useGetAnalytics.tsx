@@ -1,45 +1,13 @@
 import { ChartData } from "../types";
-import { api, ApiError } from "../utils/api";
-import { useEffect, useState } from "react";
+import { useFetch } from "./useFetch";
 
 export function useGetAnalytics() {
-  const [analytics, setAnalytics] = useState<ChartData[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const controller = new AbortController();
-
-    async function fetchAnalytics() {
-      try {
-        setIsLoading(true);
-        setError(null);
-
-        const data = await api.get<ChartData[]>("/analytics");
-        setAnalytics(data);
-      } catch (err) {
-        if (err instanceof ApiError) {
-          setError(`Error ${err.status}: ${err.message}`);
-        } else if (err instanceof DOMException && err.name === "AbortError") {
-          // Request was cancelled — do nothing
-        } else {
-          setError("Unexpected error");
-        }
-      } finally {
-        setIsLoading(false);
-      }
-    }
-
-    fetchAnalytics();
-
-    // Cleanup cancels the request if the component unmounts
-    return () => controller.abort();
-  }, []);
-
+  const { data, isLoading, error, refetch } =
+    useFetch<ChartData[]>("/analytics");
   return {
-    analytics,
+    analytics: data ?? [],
     isLoading,
     error,
-    refetch: () => window.location.reload(),
+    refetch,
   };
 }
