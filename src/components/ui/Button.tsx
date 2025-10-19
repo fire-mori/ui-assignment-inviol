@@ -43,12 +43,12 @@ export default function Button({
         variantClasses[variant],
         sizeClasses[size],
         (disabled || loading) && "opacity-50 cursor-not-allowed",
-        className,
+        className
       )}
       disabled={disabled || loading}
       {...props}
     >
-      {loading && <LoadingIcon />}
+      {loading && <LoadingIcon className="-ml-1 mr-2" />}
       {children}
     </button>
   );

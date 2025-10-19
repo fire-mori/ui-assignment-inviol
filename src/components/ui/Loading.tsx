@@ -1,7 +1,29 @@
-export default function LoadingIcon() {
+import clsx from "clsx";
+
+type LoadingIconProps = {
+  size?: "sm" | "md" | "lg";
+  className?: string;
+  label?: string;
+};
+
+export default function LoadingIcon({
+  size = "sm",
+  className,
+  label = "Loading…",
+}: LoadingIconProps) {
+  const sizeClasses: Record<typeof size, string> = {
+    sm: "h-4 w-4",
+    md: "h-6 w-6",
+    lg: "h-10 w-10",
+  };
   return (
     <svg
-      className="animate-spin -ml-1 mr-2 h-4 w-4"
+      className={clsx(
+        "animate-spin text-blue-500",
+        sizeClasses[size],
+        className
+      )}
+      aria-label={label}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
