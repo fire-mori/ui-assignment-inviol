@@ -1,9 +1,9 @@
-import { DashboardMetric } from "../types";
+import { ChartData } from "../types";
 import { api, ApiError } from "../utils/api";
 import { useEffect, useState } from "react";
 
 export function useGetAnalytics() {
-  const [analytics, setAnalytics] = useState<DashboardMetric[]>([]);
+  const [analytics, setAnalytics] = useState<ChartData[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -15,7 +15,7 @@ export function useGetAnalytics() {
         setIsLoading(true);
         setError(null);
 
-        const data = await api.get<DashboardMetric[]>("/analytics");
+        const data = await api.get<ChartData[]>("/analytics");
         setAnalytics(data);
       } catch (err) {
         if (err instanceof ApiError) {

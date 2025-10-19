@@ -2,14 +2,12 @@ import { useState } from "react";
 import Card from "../../../components/ui/Card";
 import LoadingIcon from "../../../components/ui/Loading";
 import { useGetAnalytics } from "../../../hooks/useGetAnalytics";
-import { ResponsiveContainer } from "recharts";
-import AnalyticsLineChart from "./AnalyticsLineChart";
-import AnalyticsBarChart from "./AnalyticsBarChart";
 import Button from "../../../components/ui/Button";
+import Chart from "../../../components/ui/Charts/Chart";
 
 export default function Charts() {
   const { analytics, error, isLoading } = useGetAnalytics();
-  const [chartType, setChartType] = useState<"Line" | "Bar">("Line");
+  const [chartType, setChartType] = useState<"Line" | "Bar">("Bar");
 
   if (isLoading) return <LoadingIcon />;
   if (error) return <p className="text-red-600">{error}</p>;
@@ -44,13 +42,7 @@ export default function Charts() {
         </div>
       </div>
       <div className="w-full h-80 p-4 bg-white rounded-2xl shadow-md">
-        <ResponsiveContainer width="100%" height="100%">
-          {chartType === "Line" ? (
-            <AnalyticsLineChart analytics={analytics} />
-          ) : (
-            <AnalyticsBarChart analytics={analytics} />
-          )}
-        </ResponsiveContainer>
+        <Chart data={analytics} type={chartType} />
       </div>
     </Card>
   );

@@ -1,6 +1,6 @@
-import { DashboardMetric } from "@/types";
+import { ChartData } from "../../../types";
 import {
-  LineChart,
+  LineChart as RechartsLineChart,
   Line,
   XAxis,
   YAxis,
@@ -8,13 +8,9 @@ import {
   Tooltip,
 } from "recharts";
 
-export default function AnalyticsLineChart({
-  analytics,
-}: {
-  analytics: DashboardMetric[];
-}) {
+export default function LineChart({ data }: { data: ChartData[] }) {
   return (
-    <LineChart data={analytics}>
+    <RechartsLineChart data={data}>
       <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
       <XAxis dataKey="label" />
       <YAxis />
@@ -27,6 +23,6 @@ export default function AnalyticsLineChart({
         dot={{ r: 5 }}
         activeDot={{ r: 7 }}
       />
-    </LineChart>
+    </RechartsLineChart>
   );
 }
