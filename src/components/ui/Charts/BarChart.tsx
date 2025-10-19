@@ -7,15 +7,21 @@ import {
   CartesianGrid,
   Tooltip,
 } from "recharts";
+import { CHART_COLOR, GRID, RADIUS } from "./Chart.const";
+import { AnalyticsLineChartProps } from "./Chart.types";
 
-export default function BarChart({ data }: { data: ChartData[] }) {
+export default function BarChart<T extends ChartData>({
+  data,
+  xKey,
+  yKey,
+}: AnalyticsLineChartProps<T>) {
   return (
     <RechartsBarChart data={data}>
-      <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-      <XAxis dataKey="label" />
+      <CartesianGrid {...GRID} />
+      <XAxis dataKey={xKey} />
       <YAxis />
       <Tooltip />
-      <Bar dataKey="value" fill="#3b82f6" radius={[8, 8, 0, 0]} />
+      <Bar dataKey={yKey} fill={CHART_COLOR} radius={RADIUS} />
     </RechartsBarChart>
   );
 }

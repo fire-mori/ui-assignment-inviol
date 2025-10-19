@@ -7,18 +7,24 @@ import {
   CartesianGrid,
   Tooltip,
 } from "recharts";
+import { CHART_COLOR, GRID } from "./Chart.const";
+import { AnalyticsLineChartProps } from "./Chart.types";
 
-export default function LineChart({ data }: { data: ChartData[] }) {
+export default function LineChart<T extends ChartData>({
+  data,
+  xKey,
+  yKey,
+}: AnalyticsLineChartProps<T>) {
   return (
     <RechartsLineChart data={data}>
-      <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-      <XAxis dataKey="label" />
+      <CartesianGrid {...GRID} />
+      <XAxis dataKey={xKey} />
       <YAxis />
       <Tooltip />
       <Line
         type="monotone"
-        dataKey="value"
-        stroke="#3b82f6"
+        dataKey={yKey}
+        stroke={CHART_COLOR}
         strokeWidth={3}
         dot={{ r: 5 }}
         activeDot={{ r: 7 }}
