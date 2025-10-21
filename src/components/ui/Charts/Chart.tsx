@@ -12,7 +12,7 @@ export default function Chart<T extends ChartData>({
 }: AnalyticsLineChartProps<T> & ChartType) {
   return (
     <ResponsiveContainer width="100%" height="100%">
-      {type === "Line" ? (
+      {type === "Bar" ? (
         <BarChart data={data} xKey={xKey} yKey={yKey} />
       ) : (
         <LineChart data={data} xKey={xKey} yKey={yKey} />
